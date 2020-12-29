@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.9.0" />
+    <None Remove="antlr-4.9-complete.jar" />
+    <None Remove="antlr.bat" />
+    <None Remove="antlr_compile.bat" />
+    <None Remove="grun.bat" />
+    <None Remove="*.java" />
+    <None Remove="*.class" />
+    <None Remove="*.tokens" />
+    <None Remove="*.interp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
     <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
