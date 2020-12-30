@@ -27,9 +27,13 @@ namespace KdlDotnet.Antlr
             var children = new List<KdlNode>();
             var valuesAndProperties = new List<KdlValueOrProperty>();
 
-            foreach (var child in node.node_children().node())
+            var node_children = node.node_children();
+            if (node_children is not null)
             {
-                children.Add(VisitSingleNode(child));
+                foreach (var child in node_children.node())
+                {
+                    children.Add(VisitSingleNode(child));
+                }
             }
 
             foreach (var valueOrProperty in node.node_props_and_values())

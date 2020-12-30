@@ -23,8 +23,7 @@ namespace KdlDotnet
             var commonTokenStream = new CommonTokenStream(lexer);
             var parser = new KdlAntlr.KDLParser(commonTokenStream);
             var nodes = parser.node_list();
-            nodes.Accept(KdlAntlr.)
-            WriteLine("parse tree (LISP style): " + ectx.ToStringTree(parser));
+            return nodes.Accept(new Antlr.NodeListVisitor());
 #endif
         }
     }
